@@ -12,7 +12,7 @@ from server import aggregate_models
 data = pd.read_csv("stress.csv")
 data.columns = data.columns.str.strip()
 
-print("Dataset Loaded ✅")
+print("Dataset Loaded ")
 print("Columns:", data.columns)
 
 # Split into 3 clients
@@ -22,14 +22,14 @@ remaining = data.drop(client1.index)
 client2 = remaining.sample(frac=0.5, random_state=2)
 client3 = remaining.drop(client2.index)
 
-print("Data split into 3 clients ✅")
+print("Data split into 3 clients ")
 
 # Train clients
 train_client(client1, 1)
 train_client(client2, 2)
 train_client(client3, 3)
 
-print("All clients trained ✅")
+print("All clients trained ")
 
 # Aggregate models (simulation)
 aggregate_models()
@@ -67,4 +67,4 @@ plt.show()
 with open("model.pkl", "wb") as f:
     pickle.dump(global_model, f)
 
-print("Global model created ✅")
+print("Global model created ")
