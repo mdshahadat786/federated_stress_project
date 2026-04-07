@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 def train_client(data, client_id):
-    data.columns = data.columns.str.strip()   # ✅ FIX
+    data.columns = data.columns.str.strip()   
 
     X = data.drop("Stress", axis=1)
     y = data["Stress"]
