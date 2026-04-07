@@ -11,6 +11,6 @@ def aggregate_models():
     # NOTE: RandomForest me direct averaging difficult hai
     # So we simulate aggregation by retraining
 
-    print("Models received from clients ✅")
+    print("Models received from clients ")
 
     return models
