@@ -14,9 +14,9 @@ st.write("Please share your daily routine and feelings. I will help you understa
 try:
     with open("model.pkl", "rb") as f:
         model = pickle.load(f)
-    st.success("System is ready to help you! ✅")
+    st.success("System is ready to help you! ")
 except:
-    st.error("Model file not found ❌")
+    st.error("Model file not found ")
     st.stop()
 
 # Input Section
@@ -50,7 +50,7 @@ current_level = None
 if st.button("Predict Stress"):
 
     if total_hours > 24:
-        st.warning(f"⚠️ **Data Alert:** You have logged {total_hours} hours. A day only has 24 hours.")
+        st.warning(f" **Data Alert:** You have logged {total_hours} hours. A day only has 24 hours.")
     else:
         data_input = np.array([[study, sleep, social, pressure, family,
                                 activity, screen, extra, financial,
@@ -66,7 +66,7 @@ if st.button("Predict Stress"):
         st.markdown("---")
         st.subheader("Analysis Results")
 
-        # ✅ FINAL LOGIC
+        #  LOGIC
         if stress_score <= 30:
             status = "Not Stressed"
             current_level = "Low"
@@ -107,10 +107,10 @@ if st.button("Predict Stress"):
             st.write("• Follow a structured daily schedule.")
 
 # -----------------------------
-# 📊 Stress Level Overview
+#  Stress Level Overview
 # -----------------------------
 st.markdown("---")
-st.subheader("📊 Stress Level Overview")
+st.subheader(" Stress Level Overview")
 
 if current_level:
     levels = {
